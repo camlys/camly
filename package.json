@@ -1,0 +1,16 @@
+{
+  "name": "camly",
+  "version": "1.0.0",
+  "description": "Camly",
+  "scripts": {
+    "dev": "serve",
+    "start": "serve",
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

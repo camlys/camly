@@ -1,0 +1,42 @@
+{
+  "name": "Camly - Digital Tools Suite",
+  "short_name": "Camly",
+  "description": "Transform your digital presence with Camly's powerful suite of tools and solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f8cff",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "categories": ["productivity", "business", "tools"],
+  "screenshots": [
+    {
+      "src": "/screenshots/home.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Testimonials",
+      "url": "/testimonials.html",
+      "description": "Read customer success stories"
+    },
+    {
+      "name": "Contact Us",
+      "url": "/contact.html",
+      "description": "Get in touch with our team"
+    }
+  ]
+}
