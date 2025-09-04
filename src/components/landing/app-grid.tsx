@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/landing/animate-on-scroll";
-import { QrCode, AppWindow, Construction } from "lucide-react";
+import { QrCode, Calculator, Construction } from "lucide-react";
 import Link from "next/link";
 
 const apps = [
@@ -12,10 +12,10 @@ const apps = [
     delay: 0,
   },
   {
-    icon: <Construction className="h-8 w-8 text-primary" />,
-    title: "Coming Soon",
-    description: "Another great application will be featured here. Stay tuned for more updates.",
-    href: "#",
+    icon: <Calculator className="h-8 w-8 text-primary" />,
+    title: "Calculator App",
+    description: "A simple and elegant calculator for your daily calculations.",
+    href: "https://calput.vercel.app/",
     delay: 150,
   },
   {
