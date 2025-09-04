@@ -5,6 +5,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  PopoverClose,
 } from "@/components/ui/popover";
 import { Menu } from "lucide-react";
 
@@ -48,14 +49,14 @@ export function Header() {
               <PopoverContent align="end" className="w-48 p-2 bg-background/80 backdrop-blur-sm">
                 <nav className="flex flex-col items-start space-y-1">
                   {navLinks.map((link) => (
-                    <PopoverTrigger key={link.href} asChild>
+                    <PopoverClose key={link.href} asChild>
                       <Link
                         href={link.href}
                         className="block w-full rounded-md p-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
                       >
                         {link.label}
                       </Link>
-                    </PopoverTrigger>
+                    </PopoverClose>
                   ))}
                 </nav>
               </PopoverContent>
