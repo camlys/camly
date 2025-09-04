@@ -18,6 +18,7 @@ export function Logo({ className, ...props }: SVGProps<SVGSVGElement>) {
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
+        className="animate-logo-spin"
       />
       <path
         d="M16 16m-4, 0a4,4 0 1,0 8,0a4,4 0 1,0-8,0"

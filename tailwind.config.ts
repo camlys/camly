@@ -99,12 +99,21 @@ export default {
           '100%': {
             transform: 'rotate(360deg)',
           },
+        },
+        'logo-spin': {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+          },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'border-spin': 'border-spin 4s linear infinite',
+        'logo-spin': 'logo-spin 10s linear infinite',
       },
       backgroundImage: {
         'conic-gradient': 'conic-gradient(var(--tw-gradient-stops))',
