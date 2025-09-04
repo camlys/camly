@@ -83,3 +83,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .animated-border-card {
+    @apply relative p-px overflow-hidden;
+  }
+
+  .animated-border-card::before {
+    content: "";
+    @apply absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-conic-gradient from-primary/50 via-transparent to-transparent animate-border-spin;
+  }
+
+  .animated-border-card > * {
+    @apply relative z-10;
+  }
+}

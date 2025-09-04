@@ -2,6 +2,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/ca
 import { AnimateOnScroll } from "@/components/landing/animate-on-scroll";
 import { QrCode, Calculator, Image, Crop } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const apps = [
   {
@@ -53,13 +54,15 @@ export function AppGrid() {
             delay={app.delay}
           >
             <Link href={app.href} target="_blank" rel="noopener noreferrer" className="h-full block">
-              <Card className="h-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <CardHeader>
-                  <div className="mb-4">{app.icon}</div>
-                  <CardTitle className="font-headline">{app.title}</CardTitle>
-                  <CardDescription className="pt-2">{app.description}</CardDescription>
-                </CardHeader>
-              </Card>
+              <div className="h-full animated-border-card rounded-lg">
+                <Card className="h-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <CardHeader>
+                    <div className="mb-4">{app.icon}</div>
+                    <CardTitle className="font-headline">{app.title}</CardTitle>
+                    <CardDescription className="pt-2">{app.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
             </Link>
           </AnimateOnScroll>
         ))}
