@@ -9,7 +9,7 @@ export function Logo({ className, ...props }: SVGProps<SVGSVGElement>) {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("text-foreground", className)}
+      className={cn("text-foreground animate-logo-spin", className)}
       {...props}
     >
       <path
@@ -18,7 +18,6 @@ export function Logo({ className, ...props }: SVGProps<SVGSVGElement>) {
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="animate-logo-spin"
       />
       <path
         d="M16 16m-4, 0a4,4 0 1,0 8,0a4,4 0 1,0-8,0"
