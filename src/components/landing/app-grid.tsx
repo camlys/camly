@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/landing/animate-on-scroll";
-import { QrCode, Calculator, Construction } from "lucide-react";
+import { QrCode, Calculator, Image, Construction } from "lucide-react";
 import Link from "next/link";
 
 const apps = [
@@ -19,10 +19,10 @@ const apps = [
     delay: 150,
   },
   {
-    icon: <Construction className="h-8 w-8 text-primary" />,
-    title: "Coming Soon",
-    description: "Another great application will be featured here. Stay tuned for more updates.",
-    href: "#",
+    icon: <Image className="h-8 w-8 text-primary" />,
+    title: "Favicon Generator",
+    description: "Create your perfect favicon from an image, text, or emoji.",
+    href: "https://favicon-generate.vercel.app/",
     delay: 300,
   },
   {
