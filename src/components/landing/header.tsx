@@ -41,7 +41,7 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="top" className="h-auto w-auto p-4 border rounded-md">
+              <SheetContent side="right" className="w-auto p-6 border-l">
                 <SheetHeader className="sr-only">
                   <SheetTitle>Mobile Menu</SheetTitle>
                 </SheetHeader>
