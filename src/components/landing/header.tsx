@@ -45,7 +45,7 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-48 p-2 bg-background/80 backdrop-blur-sm">
+              <PopoverContent align="end" className="w-48 p-2 bg-background/80 backdrop-blur-sm">
                 <nav className="flex flex-col items-start space-y-1">
                   {navLinks.map((link) => (
                     <PopoverTrigger key={link.href} asChild>
