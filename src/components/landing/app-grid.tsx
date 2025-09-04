@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/landing/animate-on-scroll";
-import { QrCode, Calculator, Image, Construction } from "lucide-react";
+import { QrCode, Calculator, Image, Crop } from "lucide-react";
 import Link from "next/link";
 
 const apps = [
@@ -26,10 +26,10 @@ const apps = [
     delay: 300,
   },
   {
-    icon: <Construction className="h-8 w-8 text-primary" />,
-    title: "Coming Soon",
-    description: "Another great application will be featured here. Stay tuned for more updates.",
-    href: "#",
+    icon: <Crop className="h-8 w-8 text-primary" />,
+    title: "Image Resizer",
+    description: "Quickly resize and optimize your images for any use case.",
+    href: "https://img-resizers.vercel.app/",
     delay: 450,
   },
 ];
