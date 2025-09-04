@@ -41,16 +41,11 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="w-auto">
                 <SheetHeader className="sr-only">
                   <SheetTitle>Mobile Menu</SheetTitle>
                 </SheetHeader>
-                <div className="flex flex-col p-6 pt-8">
-                <Link href="/" className="mb-8 flex items-center space-x-2">
-                  <Logo className="h-6 w-6" />
-                  <span className="font-bold font-headline">Camly</span>
-                </Link>
-                <nav className="flex flex-col items-start space-y-4">
+                <nav className="flex flex-col items-start space-y-4 pt-6">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
@@ -61,7 +56,6 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-                </div>
               </SheetContent>
             </Sheet>
           </div>
