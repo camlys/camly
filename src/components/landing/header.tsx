@@ -41,11 +41,11 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="top" className="h-auto w-full p-4 border-b">
+              <SheetContent side="top" className="h-auto w-auto p-4 border rounded-md">
                 <SheetHeader className="sr-only">
                   <SheetTitle>Mobile Menu</SheetTitle>
                 </SheetHeader>
-                <nav className="flex flex-col items-start space-y-4 pt-6">
+                <nav className="flex flex-col items-start space-y-4">
                   {navLinks.map((link) => (
                     <Link
                       key={link.href}
