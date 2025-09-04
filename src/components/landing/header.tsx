@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Menu } from "lucide-react";
 
 export function Header() {
@@ -34,30 +40,31 @@ export function Header() {
             <Link href="#contact">Request Demo</Link>
           </Button>
           <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
+            <Dialog>
+              <DialogTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-auto h-auto p-6 border-l">
-                <SheetHeader className="sr-only">
-                  <SheetTitle>Mobile Menu</SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col items-start space-y-4">
+              </DialogTrigger>
+              <DialogContent className="w-[90vw] max-w-xs rounded-lg">
+                <DialogHeader className="sr-only">
+                  <DialogTitle>Mobile Menu</DialogTitle>
+                </DialogHeader>
+                <nav className="flex flex-col items-start space-y-4 pt-4">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-foreground/80 transition-colors hover:text-foreground"
-                    >
-                      {link.label}
-                    </Link>
+                    <DialogTrigger key={link.href} asChild>
+                      <Link
+                        href={link.href}
+                        className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground"
+                      >
+                        {link.label}
+                      </Link>
+                    </DialogTrigger>
                   ))}
                 </nav>
-              </SheetContent>
-            </Sheet>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>
