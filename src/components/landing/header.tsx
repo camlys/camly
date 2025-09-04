@@ -2,12 +2,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { Menu } from "lucide-react";
 
 export function Header() {
@@ -40,31 +38,28 @@ export function Header() {
             <Link href="#contact">Request Demo</Link>
           </Button>
           <div className="md:hidden">
-            <Dialog>
-              <DialogTrigger asChild>
+            <Popover>
+              <PopoverTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
-              </DialogTrigger>
-              <DialogContent className="w-[90vw] max-w-xs rounded-lg">
-                <DialogHeader className="sr-only">
-                  <DialogTitle>Mobile Menu</DialogTitle>
-                </DialogHeader>
-                <nav className="flex flex-col items-start space-y-4 pt-4">
+              </PopoverTrigger>
+              <PopoverContent className="w-48 p-2 bg-background/80 backdrop-blur-sm">
+                <nav className="flex flex-col items-start space-y-1">
                   {navLinks.map((link) => (
-                    <DialogTrigger key={link.href} asChild>
+                    <PopoverTrigger key={link.href} asChild>
                       <Link
                         href={link.href}
-                        className="text-lg font-medium text-foreground/80 transition-colors hover:text-foreground"
+                        className="block w-full rounded-md p-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
                       >
                         {link.label}
                       </Link>
-                    </DialogTrigger>
+                    </PopoverTrigger>
                   ))}
                 </nav>
-              </DialogContent>
-            </Dialog>
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
       </div>
