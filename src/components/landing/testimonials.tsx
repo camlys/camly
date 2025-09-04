@@ -64,13 +64,10 @@ export function Testimonials() {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2">
-                <div className="p-4">
+                <div className="p-4 h-full">
                   <Card className="h-full">
-                    <CardContent className="flex flex-col h-full justify-between p-6">
-                      <p className="text-lg italic text-foreground/90">
-                        &quot;{testimonial.quote}&quot;
-                      </p>
-                      <div className="flex items-center gap-4 pt-6 mt-auto">
+                    <CardContent className="flex h-full flex-col justify-start p-6">
+                      <div className="flex items-center gap-4 pb-6">
                         <Avatar>
                           <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
                           <AvatarFallback>{testimonial.avatar}</AvatarFallback>
@@ -82,6 +79,9 @@ export function Testimonials() {
                           </p>
                         </div>
                       </div>
+                      <p className="text-lg italic text-foreground/90">
+                        &quot;{testimonial.quote}&quot;
+                      </p>
                     </CardContent>
                   </Card>
                 </div>
