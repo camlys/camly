@@ -15,7 +15,7 @@ const testimonials = [
   {
     quote: "Camly has transformed the way our team works. The efficiency gains have been incredible, and the platform is a joy to use. I can't recommend it enough!",
     name: "Mahirani",
-    title: "CEO, Innovate Inc.",
+    title: "CEO, Camly",
     avatar: "M",
     image: "https://picsum.photos/100/100?random=1",
     aiHint: "woman portrait"
@@ -23,7 +23,7 @@ const testimonials = [
   {
     quote: "The collaborative features are second to none. Our projects are more organized, and communication has never been smoother. A must-have tool for any modern business.",
     name: "Vikash Kumar",
-    title: "Project Manager, Tech Solutions",
+    title: "Project Manager, Camly",
     avatar: "VK",
     image: "https://picsum.photos/100/100?random=2",
     aiHint: "man portrait"
@@ -31,7 +31,7 @@ const testimonials = [
   {
     quote: "From implementation to daily use, the Camly team has been incredibly supportive. The platform is robust, secure, and has exceeded all our expectations.",
     name: "Rajan Kumar",
-    title: "Operations Director, Growth Co.",
+    title: "Operations Director, Camly",
     avatar: "RK",
     image: "https://picsum.photos/100/100?random=3",
     aiHint: "man smiling"
@@ -68,7 +68,7 @@ export function Testimonials() {
                   <Card className="h-full">
                     <CardContent className="flex h-full flex-col justify-start p-6">
                       <div className="flex items-center gap-4 pb-6">
-                        <Avatar>
+                        <Avatar className="h-16 w-16">
                           <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
                           <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                         </Avatar>
