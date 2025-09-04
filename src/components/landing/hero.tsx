@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32">
+    <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32 px-4 md:px-6">
       <div className="flex flex-col items-start gap-6">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-in-out">
           Streamline Your Workflow, Amplify Your Results.

@@ -45,7 +45,7 @@ export function Testimonials() {
       id="testimonials"
       className="w-full py-20 md:py-24 bg-muted/50 data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0"
     >
-      <div className="container">
+      <div className="container px-4 md:px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">
             Loved by Teams Worldwide
