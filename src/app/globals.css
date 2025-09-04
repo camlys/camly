@@ -91,7 +91,7 @@
 
   .animated-border-card::before {
     content: "";
-    @apply absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-conic-gradient from-primary/50 via-transparent to-transparent animate-border-spin;
+    @apply absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-conic-gradient from-yellow-400 via-orange-500 to-red-600 animate-border-spin;
   }
 
   .animated-border-card > * {
