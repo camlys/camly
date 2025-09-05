@@ -61,8 +61,10 @@ export default function AppViewerPage({ params }: { params: { id: string } }) {
   return (
     <div className="flex flex-col h-screen">
        <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-         <Link href="/" className="p-0 rounded-full animated-icon-background">
-            <Logo className="h-6 w-6 m-2" />
+         <Link href="/" className="flex items-center">
+            <div className="p-2 rounded-full animated-icon-background">
+              <Logo className="h-6 w-6" />
+            </div>
             <span className="sr-only">Back to Home</span>
          </Link>
        </div>
