@@ -1,19 +1,26 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/logo";
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/logo';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
   PopoverClose,
-} from "@/components/ui/popover";
-import { Menu } from "lucide-react";
+} from '@/components/ui/popover';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Menu, Grid3x3 } from 'lucide-react';
+import { apps } from './app-grid';
 
 export function Header() {
   const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#contact", label: "Contact" },
+    { href: '#features', label: 'Features' },
+    { href: '#testimonials', label: 'Testimonials' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   return (
@@ -24,7 +31,7 @@ export function Header() {
           <span className="font-bold font-headline">Camly</span>
         </Link>
         <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
-          {navLinks.map((link) => (
+          {navLinks.map(link => (
             <Link
               key={link.href}
               href={link.href}
@@ -34,10 +41,30 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end space-x-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Grid3x3 className="h-5 w-5" />
+                <span className="sr-only">All Apps</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {apps.map((app, index) => (
+                <DropdownMenuItem key={index} asChild>
+                  <Link href={`/apps/${index}`}>
+                    {app.icon}
+                    <span className="ml-2">{app.title}</span>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button asChild>
             <Link href="#contact">Request Demo</Link>
           </Button>
+
           <div className="md:hidden">
             <Popover>
               <PopoverTrigger asChild>
@@ -46,9 +73,12 @@ export function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent align="end" className="w-48 p-2 bg-background/80 backdrop-blur-sm">
+              <PopoverContent
+                align="end"
+                className="w-auto p-2 bg-background/80 backdrop-blur-sm"
+              >
                 <nav className="flex flex-col items-start space-y-1">
-                  {navLinks.map((link) => (
+                  {navLinks.map(link => (
                     <PopoverClose key={link.href} asChild>
                       <Link
                         href={link.href}
