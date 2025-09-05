@@ -97,7 +97,7 @@ export default {
         },
         'border-spin': {
           '100%': {
-            transform: 'rotate(-360deg)',
+            transform: 'rotate(360deg)',
           },
         },
         'logo-spin': {
@@ -107,6 +107,12 @@ export default {
           to: {
             transform: 'rotate(360deg)',
           },
+        },
+        'pin-color': {
+          '0%, 100%': { color: 'hsl(var(--primary))' },
+          '25%': { color: 'hsl(var(--chart-2))' },
+          '50%': { color: 'hsl(var(--chart-4))' },
+          '75%': { color: 'hsl(var(--chart-1))' },
         }
       },
       animation: {
@@ -114,6 +120,7 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'border-spin': 'border-spin 4s linear infinite',
         'logo-spin': 'logo-spin 10s linear infinite',
+        'pin-color': 'pin-color 6s linear infinite',
       },
       backgroundImage: {
         'conic-gradient': 'conic-gradient(var(--tw-gradient-stops))',

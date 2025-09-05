@@ -21,7 +21,7 @@ export function Logo({ className, ...props }: SVGProps<SVGSVGElement>) {
       />
       <path
         d="M16 16m-4, 0a4,4 0 1,0 8,0a4,4 0 1,0-8,0"
-        className="text-primary"
+        className="animate-pin-color"
         fill="currentColor"
       />
     </svg>
