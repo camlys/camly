@@ -69,8 +69,12 @@ export default function AppViewerPage({ params }: { params: { id: string } }) {
         <div className="absolute top-4 right-4 z-10">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="bg-background/50 backdrop-blur-sm">
-                <Grid3x3 className="h-5 w-5" />
+               <Button
+                variant="ghost"
+                size="icon"
+                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-0"
+              >
+                <Grid3x3 className="h-5 w-5 text-foreground bg-background rounded-sm p-0.5 z-10" />
                 <span className="sr-only">All Apps</span>
               </Button>
             </DropdownMenuTrigger>
