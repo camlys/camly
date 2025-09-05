@@ -2,6 +2,14 @@ import { notFound } from 'next/navigation';
 import { apps } from '@/components/landing/app-grid';
 import Link from 'next/link';
 import { Logo } from '@/components/logo';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { Grid3x3 } from 'lucide-react';
 
 export default function AppViewerPage({ params }: { params: { id: string } }) {
   const appId = parseInt(params.id, 10);
@@ -14,10 +22,32 @@ export default function AppViewerPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="flex flex-col h-screen">
-       <Link href="/" className="absolute top-4 left-4 z-10 p-2 rounded-full bg-background/50 backdrop-blur-sm">
-          <Logo className="h-6 w-6" />
-          <span className="sr-only">Back to Home</span>
-       </Link>
+       <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+         <Link href="/" className="p-2 rounded-full bg-background/50 backdrop-blur-sm">
+            <Logo className="h-6 w-6" />
+            <span className="sr-only">Back to Home</span>
+         </Link>
+       </div>
+        <div className="absolute top-4 right-4 z-10">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="bg-background/50 backdrop-blur-sm">
+                <Grid3x3 className="h-5 w-5" />
+                <span className="sr-only">All Apps</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {apps.map((app, index) => (
+                <DropdownMenuItem key={index} asChild>
+                  <Link href={`/apps/${index}`}>
+                    {app.icon}
+                    <span className="ml-2">{app.title}</span>
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
         <iframe
           src={app.href}
           className="flex-1 w-full border-0"
