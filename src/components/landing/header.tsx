@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Menu, Grid3x3 } from 'lucide-react';
 import { apps } from './app-grid';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   const navLinks = [
@@ -44,8 +45,10 @@ export function Header() {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Grid3x3 className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="animated-icon-background">
+                 <div className="bg-background rounded-sm p-0.5">
+                  <Grid3x3 className="h-5 w-5 text-foreground" />
+                </div>
                 <span className="sr-only">All Apps</span>
               </Button>
             </DropdownMenuTrigger>
