@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section className="container grid lg:grid-cols-2 gap-12 items-center py-20 md:py-32">
       <div className="flex flex-col items-start gap-6">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-in-out">
+        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-headline animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-in-out bg-gradient-to-r from-primary via-fuchsia-500 to-orange-400 bg-clip-text text-transparent">
           Streamline Your Workflow, Amplify Your Results.
         </h1>
         <p className="max-w-[600px] text-foreground/80 md:text-xl animate-in fade-in slide-in-from-bottom-6 duration-1000 ease-in-out delay-200">
