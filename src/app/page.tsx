@@ -4,6 +4,7 @@ import { AppGrid } from '@/components/landing/app-grid';
 import { Features } from '@/components/landing/features';
 import { Testimonials } from '@/components/landing/testimonials';
 import { Cta } from '@/components/landing/cta';
+import { SeoHighlight } from '@/components/landing/seo-highlight';
 import { Faq } from '@/components/landing/faq';
 import { ContactForm } from '@/components/landing/contact-form';
 import { Footer } from '@/components/landing/footer';
@@ -18,6 +19,7 @@ export default function Home() {
         <Features />
         <Testimonials />
         <Cta />
+        <SeoHighlight />
         <Faq />
         <ContactForm />
       </main>
