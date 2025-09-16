@@ -2,11 +2,12 @@ import { AnimateOnScroll } from "@/components/landing/animate-on-scroll";
 import { Header } from "@/components/landing/header";
 import { Footer } from "@/components/landing/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, BarChart, Search, Target, Link as LinkIcon, Edit, MapPin, ShoppingCart, FileText, BarChartBig, Lightbulb, LineChart, Users } from "lucide-react";
+import { CheckCircle, BarChart, Search, Target, Link as LinkIcon, Edit, MapPin, ShoppingCart, FileText, BarChartBig, Lightbulb, LineChart, Users, QrCode, Calculator, Image as ImageIcon, Crop } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from 'next';
+import { apps } from "@/components/landing/app-grid";
 
 export const metadata: Metadata = {
   title: 'SEO Services & Strategy',
@@ -159,8 +160,45 @@ export default function SEOPage() {
                         </div>
                     </div>
                 </AnimateOnScroll>
+                
+                 <AnimateOnScroll tag="section" className="w-full py-20 md:py-24 data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0">
+                    <div className="container">
+                        <div className="mb-12 text-center">
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">
+                            Integrated Tools to Boost Your Online Presence
+                            </h2>
+                            <p className="mx-auto mt-4 max-w-[700px] text-foreground/80 md:text-xl">
+                                Effective SEO is supported by great tools. Our application suite is designed to enhance your digital footprint.
+                            </p>
+                        </div>
+                        <div className="mx-auto grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                            {apps.map((app, index) => (
+                            <AnimateOnScroll
+                                key={index}
+                                className="data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0"
+                                delay={app.delay}
+                            >
+                               <Card className="h-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                                  <CardHeader>
+                                    <div className="mb-4">{app.icon}</div>
+                                    <CardTitle className="font-headline">{app.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-0">
+                                    <p className="text-muted-foreground">{app.description}</p>
+                                </CardContent>
+                                </Card>
+                            </AnimateOnScroll>
+                            ))}
+                        </div>
+                         <div className="text-center mt-12">
+                            <Button asChild size="lg">
+                                <Link href="/#apps">Explore All Apps</Link>
+                            </Button>
+                        </div>
+                    </div>
+                </AnimateOnScroll>
 
-                <AnimateOnScroll tag="section" className="w-full py-20 md:py-24 data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0">
+                <AnimateOnScroll tag="section" className="w-full py-20 md:py-24 bg-muted/50 data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0">
                     <div className="container">
                         <div className="mb-16 text-center">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">
@@ -194,7 +232,7 @@ export default function SEOPage() {
                 </AnimateOnScroll>
 
 
-                <AnimateOnScroll tag="section" className="w-full py-20 md:py-24 bg-muted/50 data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0">
+                <AnimateOnScroll tag="section" className="w-full py-20 md:py-24 data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0">
                     <div className="container">
                         <div className="mb-12 text-center">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">
@@ -243,3 +281,4 @@ export default function SEOPage() {
 }
 
     
+
