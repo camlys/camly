@@ -9,11 +9,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
+  const staticRoutes = [
+    {
+      url: `${URL}/seo`,
+      lastModified: new Date(),
+    }
+  ];
+
   return [
     {
       url: URL,
       lastModified: new Date(),
     },
     ...appRoutes,
+    ...staticRoutes,
   ];
 }

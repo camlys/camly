@@ -21,6 +21,7 @@ export function Header() {
   const navLinks = [
     { href: '#features', label: 'Features' },
     { href: '#testimonials', label: 'Testimonials' },
+    { href: '/seo', label: 'SEO' },
     { href: '#contact', label: 'Contact' },
   ];
 
