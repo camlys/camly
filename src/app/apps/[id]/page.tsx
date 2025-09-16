@@ -75,7 +75,7 @@ export default function AppViewerPage({ params }: { params: { id: string } }) {
                 variant="ghost"
                 className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-2"
               >
-                <Grid3x3 className="h-5 w-5 text-foreground z-10" />
+                <Grid3x3 className="h-5 w-5 text-foreground z-10 relative left-px" />
                 <span className="sr-only">All Apps</span>
               </Button>
             </DropdownMenuTrigger>
