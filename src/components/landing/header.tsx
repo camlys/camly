@@ -68,7 +68,7 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button asChild>
+          <Button asChild className="hidden md:inline-flex" variant="secondary">
             <Link href="#contact">Request Demo</Link>
           </Button>
 
