@@ -50,7 +50,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-0 flex items-center justify-center"
+                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-0 flex items-center justify-center mr-2"
               >
                 <div className="flex items-center justify-center bg-background rounded-sm z-10 p-1">
                   <Grid3x3 className="h-5 w-5 text-foreground" />

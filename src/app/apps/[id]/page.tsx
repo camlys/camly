@@ -68,7 +68,7 @@ export default function AppViewerPage({ params }: { params: { id: string } }) {
             <span className="sr-only">Back to Home</span>
          </Link>
        </div>
-        <div className="absolute top-4 right-4 z-10">
+        <div className="absolute top-4 right-2 z-10">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
                <Button
