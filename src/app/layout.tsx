@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth.',
     images: [`${URL_BASE}/og-image.png`],
   },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
