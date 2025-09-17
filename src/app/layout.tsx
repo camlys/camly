@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
-const URL_BASE = 'https://camlys.vercel.app';
+const URL_BASE = 'https://camly.site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(URL_BASE),
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     default: 'Camly - Streamline Your Workflow, Amplify Your Results.',
     template: `%s | Camly`,
   },
-  description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth. Discover QR generators, calculators, and more.',
-  keywords: ['productivity tools', 'workflow optimization', 'business apps', 'QR code generator', 'image resizer', 'favicon generator', 'calculator'],
+  description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth. Discover QR generators, calculators, image resizers, and favicon generators.',
+  keywords: ['productivity suite', 'workflow optimization', 'business tools', 'online apps', 'QR code generator', 'image resizer', 'favicon generator', 'online calculator', 'small business tools', 'web development utilities'],
   openGraph: {
     title: 'Camly - Streamline Your Workflow, Amplify Your Results.',
     description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth.',
@@ -43,7 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth" style={{
+      userSelect: 'none',
+      WebkitUserSelect: 'none',
+      MozUserSelect: 'none',
+      msUserSelect: 'none',
+    }}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

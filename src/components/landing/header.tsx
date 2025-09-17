@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
@@ -16,8 +17,11 @@ import {
 import { Menu, Grid3x3 } from 'lucide-react';
 import { apps } from './app-grid';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
+
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = [
     { href: '#features', label: 'Features' },
     { href: '#testimonials', label: 'Testimonials' },
@@ -34,29 +38,35 @@ export function Header() {
           </div>
           <span className="font-bold font-headline">Camly</span>
         </Link>
-        <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-foreground/60 transition-colors hover:text-foreground/80"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <div className="flex flex-1 items-center justify-end space-x-2">
-          <DropdownMenu>
+        <div className="flex flex-1 items-center justify-end space-x-2 md:justify-start">
+           <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-foreground/60 transition-colors hover:text-foreground/80"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
                 className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-2 mr-2"
+                 onMouseEnter={() => setIsMenuOpen(true)}
               >
                 <Grid3x3 className="h-5 w-5 text-foreground z-10 relative left-px" />
                 <span className="sr-only">All Apps</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent 
+              align="end"
+              className="bg-background/80 backdrop-blur-sm"
+              onMouseLeave={() => setIsMenuOpen(false)}
+            >
               {apps.map((app, index) => (
                 <DropdownMenuItem key={index} asChild>
                   <Link href={`/apps/${index}`}>

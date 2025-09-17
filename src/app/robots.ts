@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const URL = 'https://camlys.vercel.app';
+const URL = 'https://camly.site';
 
 export default function robots(): MetadataRoute.Robots {
   return {
