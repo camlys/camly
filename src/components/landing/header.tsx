@@ -59,7 +59,7 @@ export function Header() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="focus-visible:ring-0 focus-visible:ring-offset-0 z-10"
+                    className="focus-visible:ring-0 focus-visible:ring-offset-0 z-10 hover:bg-transparent"
                   >
                     <Grid3x3 className="h-5 w-5" />
                     <span className="sr-only">All Apps</span>
