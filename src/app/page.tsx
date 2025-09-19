@@ -15,13 +15,27 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <AppGrid />
-        <Features />
-        <Testimonials />
-        <Cta />
-        <SeoHighlight />
-        <Faq />
-        <ContactForm />
+        <div className="bg-secondary">
+         <AppGrid />
+        </div>
+        <div className="bg-background">
+          <Features />
+        </div>
+        <div className="bg-secondary">
+          <Testimonials />
+        </div>
+        <div className="bg-background">
+          <Cta />
+        </div>
+        <div className="bg-muted/50">
+          <SeoHighlight />
+        </div>
+        <div className="bg-background">
+          <Faq />
+        </div>
+        <div className="bg-secondary">
+          <ContactForm />
+        </div>
       </main>
       <Footer />
     </div>

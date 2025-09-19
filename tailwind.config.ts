@@ -111,8 +111,8 @@ export default {
         'pin-color': {
           '0%, 100%': { color: 'hsl(var(--primary))' },
           '25%': { color: 'hsl(var(--chart-2))' },
-          '50%': { color: 'hsl(var(--chart-4))' },
-          '75%': { color: 'hsl(var(--chart-1))' },
+          '50%': { color: 'hsl(var(--chart-3))' },
+          '75%': { color: 'hsl(var(--chart-4))' },
         }
       },
       animation: {
