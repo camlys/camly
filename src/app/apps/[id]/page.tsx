@@ -3,6 +3,12 @@ import { apps } from '@/components/landing/app-grid';
 import type { Metadata } from 'next';
 import AppViewerClient from './app-viewer-client';
 
+export async function generateStaticParams() {
+  return apps.map((app, index) => ({
+    id: index.toString(),
+  }));
+}
+
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const appId = parseInt(params.id, 10);
 
