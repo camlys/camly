@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Logo } from '@/components/logo';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +10,7 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Grid3x3 } from 'lucide-react';
+import { Grid3x3, Home } from 'lucide-react';
 
 export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +36,7 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
              >
                 <DropdownMenuItem asChild>
                   <Link href="/">
-                    <Logo className="h-6 w-6 mr-2" />
+                    <Home className="h-6 w-6 mr-2" />
                     <span className="ml-2 font-bold">Home</span>
                   </Link>
                 </DropdownMenuItem>

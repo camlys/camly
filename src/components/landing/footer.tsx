@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Twitter, Linkedin, Facebook } from "lucide-react";
 
@@ -15,7 +14,6 @@ export function Footer() {
       <div className="container py-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-2">
-            <Logo className="h-6 w-6" />
             <span className="font-bold font-headline">Camly</span>
           </div>
           <p className="text-sm text-foreground/60">
