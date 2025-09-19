@@ -8,6 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Grid3x3 } from 'lucide-react';
@@ -16,16 +17,8 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex flex-col h-screen">
-       <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-         <Link href="/" className="flex items-center">
-            <div className="p-2 rounded-full animated-icon-background">
-              <Logo className="h-6 w-6" />
-            </div>
-            <span className="sr-only">Back to Home</span>
-         </Link>
-       </div>
-        <div className="absolute top-4 right-2 z-10">
+    <div className="flex flex-col h-screen bg-background text-foreground">
+        <div className="absolute top-4 left-4 z-10">
            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DropdownMenuTrigger asChild>
                <Button
@@ -38,10 +31,17 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
               </Button>
             </DropdownMenuTrigger>
              <DropdownMenuContent 
-              align="end" 
+              align="start" 
               className="bg-background/80 backdrop-blur-sm"
               onMouseLeave={() => setIsMenuOpen(false)}
              >
+                <DropdownMenuItem asChild>
+                  <Link href="/">
+                    <Logo className="h-6 w-6 mr-2" />
+                    <span className="ml-2 font-bold">Home</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
               {apps.map((appItem, index) => (
                 <DropdownMenuItem key={index} asChild>
                   <Link href={`/apps/${index}`}>
