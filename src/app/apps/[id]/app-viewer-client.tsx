@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Grid3x3, Home } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,10 +22,9 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
             <DropdownMenuTrigger asChild>
                <Button
                 variant="ghost"
-                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-2"
+                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-4"
                 onMouseEnter={() => setIsMenuOpen(true)}
               >
-                <Grid3x3 className="h-5 w-5 text-foreground z-10 relative left-px" />
                 <span className="sr-only">All Apps</span>
               </Button>
             </DropdownMenuTrigger>
