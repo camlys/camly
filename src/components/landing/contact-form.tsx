@@ -15,7 +15,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { submitContactForm } from "@/app/actions";
 import { AnimateOnScroll } from "./animate-on-scroll";
 import { Card, CardContent } from "../ui/card";
 import { Mail, Phone, MapPin, Twitter, Linkedin, Facebook } from "lucide-react";
@@ -39,32 +38,16 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const formData = new FormData();
-    Object.entries(values).forEach(([key, value]) => {
-      formData.append(key, value);
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    console.log("Form submitted (client-side):", values);
+
+    toast({
+      title: "Success!",
+      description: "Thank you for your message! We will get back to you soon.",
     });
-
-    const result = await submitContactForm(null, formData);
-
-    if (result.errors && Object.keys(result.errors).length > 0) {
-      toast({
-        title: "Error submitting form",
-        description: result.message,
-        variant: "destructive",
-      });
-      Object.entries(result.errors).forEach(([key, value]) => {
-        form.setError(key as keyof z.infer<typeof formSchema>, {
-          type: "manual",
-          message: value?.[0] || "Invalid input",
-        });
-      });
-    } else {
-      toast({
-        title: "Success!",
-        description: result.message,
-      });
-      form.reset();
-    }
+    form.reset();
   }
 
   return (

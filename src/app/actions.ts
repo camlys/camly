@@ -18,6 +18,7 @@ type FormState = {
 };
 
 export async function submitContactForm(prevState: FormState | null, formData: FormData) {
+  /*
   const validatedFields = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -36,6 +37,7 @@ export async function submitContactForm(prevState: FormState | null, formData: F
 
   // Here you would typically send an email, save to a database, etc.
   console.log("Form data submitted:", validatedFields.data);
+  */
 
   return {
     message: "Thank you for your message! We will get back to you soon.",
