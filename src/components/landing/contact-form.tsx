@@ -93,15 +93,15 @@ export function ContactForm() {
                 <div className="space-y-4">
                     <div className="flex items-center gap-4">
                         <Mail className="h-6 w-6 text-primary" />
-                        <a href="mailto:support@camly.com" className="hover:underline">support@camly.com</a>
+                        <a href="mailto:support@camly.site" className="hover:underline">support@camly.site</a>
                     </div>
                     <div className="flex items-center gap-4">
                         <Phone className="h-6 w-6 text-primary" />
-                        <span>+1 (555) 123-4567</span>
+                        <span>+91 84348 28368</span>
                     </div>
                     <div className="flex items-start gap-4">
                         <MapPin className="h-6 w-6 text-primary mt-1" />
-                        <span>123 Innovation Drive, Tech City, 94105</span>
+                        <span>123 Camly pvt. Chandini chowk, Begusarai 851101</span>
                     </div>
                 </div>
                  <div className="flex items-center gap-4 pt-4">
