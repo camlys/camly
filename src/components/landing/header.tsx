@@ -53,32 +53,33 @@ export function Header() {
           </nav>
           
           <div className="flex items-center">
-            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-2 mr-2"
-                  onMouseEnter={() => setIsMenuOpen(true)}
+            <div className="animated-icon-background rounded-full p-px mr-2">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="focus-visible:ring-0 focus-visible:ring-offset-0 z-10"
+                  >
+                    <Grid3x3 className="h-5 w-5" />
+                    <span className="sr-only">All Apps</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                  align="end"
+                  className="bg-background/80 backdrop-blur-sm"
                 >
-                  <Grid3x3 className="h-5 w-5 text-foreground z-10 relative left-px" />
-                  <span className="sr-only">All Apps</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="end"
-                className="bg-background/80 backdrop-blur-sm"
-                onMouseLeave={() => setIsMenuOpen(false)}
-              >
-                {apps.map((app, index) => (
-                  <DropdownMenuItem key={index} asChild>
-                    <Link href={`/apps/${index}`}>
-                      {app.icon}
-                      <span className="ml-2">{app.title}</span>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+                  {apps.map((app, index) => (
+                    <DropdownMenuItem key={index} asChild>
+                      <Link href={`/apps/${index}`}>
+                        {app.icon}
+                        <span className="ml-2">{app.title}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
 
             <div className="animated-icon-background rounded-full p-px">
                 <ThemeToggle />
