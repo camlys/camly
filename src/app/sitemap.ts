@@ -3,6 +3,8 @@ import { apps } from '@/components/landing/app-grid';
 
 const URL = 'https://camly.site';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const appRoutes = apps.map((app, index) => ({
     url: `${URL}/apps/${index}`,
