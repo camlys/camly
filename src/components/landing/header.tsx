@@ -80,7 +80,9 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <ThemeToggle />
+            <div className="animated-icon-background rounded-full p-px">
+                <ThemeToggle />
+            </div>
 
             <div className="md:hidden ml-2">
               <Popover>
