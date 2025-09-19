@@ -54,12 +54,13 @@ export function Header() {
           
           <div className="flex items-center">
             <div className="animated-icon-background rounded-full p-px mr-2">
-              <DropdownMenu>
+              <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
                     className="focus-visible:ring-0 focus-visible:ring-offset-0 z-10 hover:bg-transparent"
+                    onMouseEnter={() => setIsMenuOpen(true)}
                   >
                     <Grid3x3 className="h-5 w-5" />
                     <span className="sr-only">All Apps</span>
@@ -68,6 +69,7 @@ export function Header() {
                 <DropdownMenuContent 
                   align="end"
                   className="bg-background/80 backdrop-blur-sm"
+                  onMouseLeave={() => setIsMenuOpen(false)}
                 >
                   {apps.map((app, index) => (
                     <DropdownMenuItem key={index} asChild>
