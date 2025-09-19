@@ -22,7 +22,7 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
             <DropdownMenuTrigger asChild>
                <Button
                 variant="ghost"
-                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-4"
+                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 px-6 py-4"
                 onMouseEnter={() => setIsMenuOpen(true)}
               >
                 <span className="sr-only">All Apps</span>
