@@ -18,6 +18,7 @@ import { Menu, Grid3x3 } from 'lucide-react';
 import { apps } from './app-grid';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { ThemeToggle } from '../theme-toggle';
 
 
 export function Header() {
@@ -38,7 +39,7 @@ export function Header() {
           </div>
           <span className="font-bold font-headline">Camly</span>
         </Link>
-        <div className="flex flex-1 items-center justify-end space-x-2 md:justify-start">
+        <div className="flex flex-1 items-center justify-end space-x-2 md:justify-between">
            <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
             {navLinks.map(link => (
               <Link
@@ -50,64 +51,64 @@ export function Header() {
               </Link>
             ))}
           </nav>
-
-          <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-2 mr-2"
-                 onMouseEnter={() => setIsMenuOpen(true)}
-              >
-                <Grid3x3 className="h-5 w-5 text-foreground z-10 relative left-px" />
-                <span className="sr-only">All Apps</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent 
-              align="end"
-              className="bg-background/80 backdrop-blur-sm"
-              onMouseLeave={() => setIsMenuOpen(false)}
-            >
-              {apps.map((app, index) => (
-                <DropdownMenuItem key={index} asChild>
-                  <Link href={`/apps/${index}`}>
-                    {app.icon}
-                    <span className="ml-2">{app.title}</span>
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <Button asChild className="hidden md:inline-flex" variant="secondary">
-            <Link href="#contact">Request Demo</Link>
-          </Button>
-
-          <div className="md:hidden">
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Toggle Menu</span>
+          
+          <div className="flex items-center">
+            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 p-2 mr-2"
+                  onMouseEnter={() => setIsMenuOpen(true)}
+                >
+                  <Grid3x3 className="h-5 w-5 text-foreground z-10 relative left-px" />
+                  <span className="sr-only">All Apps</span>
                 </Button>
-              </PopoverTrigger>
-              <PopoverContent
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
                 align="end"
-                className="w-auto p-2 bg-background/80 backdrop-blur-sm"
+                className="bg-background/80 backdrop-blur-sm"
+                onMouseLeave={() => setIsMenuOpen(false)}
               >
-                <nav className="flex flex-col items-start space-y-1">
-                  {navLinks.map(link => (
-                    <PopoverClose key={link.href} asChild>
-                      <Link
-                        href={link.href}
-                        className="block w-full rounded-md p-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
-                      >
-                        {link.label}
-                      </Link>
-                    </PopoverClose>
-                  ))}
-                </nav>
-              </PopoverContent>
-            </Popover>
+                {apps.map((app, index) => (
+                  <DropdownMenuItem key={index} asChild>
+                    <Link href={`/apps/${index}`}>
+                      {app.icon}
+                      <span className="ml-2">{app.title}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <ThemeToggle />
+
+            <div className="md:hidden ml-2">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-5 w-5" />
+                    <span className="sr-only">Toggle Menu</span>
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  align="end"
+                  className="w-auto p-2 bg-background/80 backdrop-blur-sm"
+                >
+                  <nav className="flex flex-col items-start space-y-1">
+                    {navLinks.map(link => (
+                      <PopoverClose key={link.href} asChild>
+                        <Link
+                          href={link.href}
+                          className="block w-full rounded-md p-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
+                        >
+                          {link.label}
+                        </Link>
+                      </PopoverClose>
+                    ))}
+                  </nav>
+                </PopoverContent>
+              </Popover>
+            </div>
           </div>
         </div>
       </div>
