@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
+import Script from 'next/script';
 
 const URL_BASE = 'https://camly.site';
 
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth" style={{
       userSelect: 'none',
       WebkitUserSelect: 'none',
+
       MozUserSelect: 'none',
       msUserSelect: 'none',
     }} suppressHydrationWarning>
@@ -64,6 +66,19 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-VD71EJQQLF"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-VD71EJQQLF');
+          `}
+        </Script>
       </head>
       <body className={cn('font-body antialiased')}>
         <ThemeProvider
