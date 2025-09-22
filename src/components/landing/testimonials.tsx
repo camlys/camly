@@ -66,9 +66,9 @@ export function Testimonials() {
               <CarouselItem key={index} className="md:basis-1/2">
                 <div className="p-4">
                   <Card>
-                    <CardContent className="flex flex-col justify-start p-6">
-                      <div className="flex items-center gap-4 pb-6">
-                        <Avatar className="h-16 w-16">
+                    <CardContent className="flex flex-col justify-start p-4">
+                      <div className="flex items-center gap-4 pb-4">
+                        <Avatar className="h-12 w-12">
                           <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
                           <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                         </Avatar>
@@ -79,7 +79,7 @@ export function Testimonials() {
                           </p>
                         </div>
                       </div>
-                      <p className="text-lg italic text-foreground/90">
+                      <p className="text-base italic text-foreground/90">
                         &quot;{testimonial.quote}&quot;
                       </p>
                     </CardContent>
