@@ -7,12 +7,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Menu, LayoutGrid } from 'lucide-react';
+import { LayoutGrid } from 'lucide-react';
 import { apps } from '@/lib/apps-config';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { ThemeToggle } from '../theme-toggle';
-import { Popover, PopoverContent, PopoverTrigger, PopoverClose } from '../ui/popover';
 
 
 export function Header() {
@@ -45,34 +44,6 @@ export function Header() {
           </nav>
           
           <div className="flex items-center">
-             <div className="md:hidden">
-                <Popover>
-                    <PopoverTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                        <Menu className="h-5 w-5" />
-                        <span className="sr-only">Toggle Menu</span>
-                    </Button>
-                    </PopoverTrigger>
-                    <PopoverContent
-                    align="end"
-                    className="w-auto p-2 bg-background/80 backdrop-blur-sm"
-                    >
-                    <nav className="flex flex-col items-start space-y-1">
-                        {navLinks.map(link => (
-                        <PopoverClose key={link.href} asChild>
-                            <Link
-                            href={link.href}
-                            className="block w-full rounded-md p-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-accent-foreground"
-                            >
-                            {link.label}
-                            </Link>
-                        </PopoverClose>
-                        ))}
-                    </nav>
-                    </PopoverContent>
-                </Popover>
-            </div>
-
             <ThemeToggle />
 
             <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
