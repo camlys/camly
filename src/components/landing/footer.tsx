@@ -9,6 +9,13 @@ export function Footer() {
     { name: "Facebook", icon: Facebook, href: "#" },
   ];
 
+  const footerLinks = [
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: "SEO", href: "/seo" },
+    { name: "Contact", href: "/#contact"}
+  ]
+
   return (
     <footer className="border-t">
       <div className="container py-8">
@@ -16,9 +23,13 @@ export function Footer() {
           <div className="flex items-center gap-2">
             <span className="font-bold font-headline">Camly</span>
           </div>
-          <p className="text-sm text-foreground/60">
-            © {new Date().getFullYear()} Camly. All rights reserved.
-          </p>
+           <nav className="flex gap-4 sm:gap-6">
+              {footerLinks.map((link) => (
+                <Link key={link.name} href={link.href} className="text-sm text-foreground/60 hover:text-foreground">
+                  {link.name}
+                </Link>
+              ))}
+          </nav>
           <div className="flex items-center gap-2">
             {socialLinks.map((link) => (
               <Button key={link.name} variant="ghost" size="icon" asChild>
@@ -29,6 +40,9 @@ export function Footer() {
             ))}
           </div>
         </div>
+         <div className="mt-6 text-center text-sm text-foreground/60">
+            © {new Date().getFullYear()} Camly. All rights reserved.
+          </div>
       </div>
     </footer>
   );
