@@ -22,7 +22,7 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
             <DropdownMenuTrigger asChild>
                <Button
                 variant="ghost"
-                className="px-6 py-4 focus-visible:ring-0 focus-visible:ring-offset-0"
+                className="px-4 py-4 focus-visible:ring-0 focus-visible:ring-offset-0 border"
                 onMouseEnter={() => setIsMenuOpen(true)}
               >
                 <LayoutGrid className="h-6 w-6" />
