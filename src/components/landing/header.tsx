@@ -55,7 +55,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="mr-2"
+                  className="mr-2 focus-visible:ring-0 focus-visible:ring-offset-0"
                   onMouseEnter={() => setIsMenuOpen(true)}
                 >
                   <LayoutGrid className="h-5 w-5" />
