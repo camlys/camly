@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from 'next';
-import { apps } from "@/components/landing/app-grid";
+import { apps } from '@/lib/apps-config';
 
 export const metadata: Metadata = {
   title: 'SEO Services & Strategy',
@@ -281,4 +281,5 @@ export default function SEOPage() {
 }
 
     
+
 

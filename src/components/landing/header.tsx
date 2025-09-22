@@ -2,22 +2,17 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  PopoverClose,
-} from '@/components/ui/popover';
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Menu, LayoutGrid } from 'lucide-react';
-import { apps } from './app-grid';
+import { apps } from '@/lib/apps-config';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { ThemeToggle } from '../theme-toggle';
+import { Popover, PopoverContent, PopoverTrigger, PopoverClose } from '../ui/popover';
 
 
 export function Header() {
@@ -56,25 +51,31 @@ export function Header() {
                   variant="ghost"
                   size="icon"
                   className="mr-2 focus-visible:ring-0 focus-visible:ring-offset-0 border"
-                  onMouseEnter={() => setIsMenuOpen(true)}
                 >
                   <LayoutGrid className="h-5 w-5" />
-                  <span className="sr-only">All Apps</span>
+                  <span className="sr-only">App Hub</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent 
                 align="end"
-                className="bg-background/80 backdrop-blur-sm"
-                onMouseLeave={() => setIsMenuOpen(false)}
+                className="w-80 bg-background/80 p-4 backdrop-blur-sm"
               >
-                {apps.map((app, index) => (
-                  <DropdownMenuItem key={index} asChild>
-                    <Link href={`/apps/${index}`}>
-                      {app.icon}
-                      <span className="ml-2">{app.title}</span>
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
+                <div className="mb-4">
+                  <h3 className="text-lg font-medium font-headline">App Hub</h3>
+                  <p className="text-sm text-muted-foreground">Quick access to all tools.</p>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {apps.map((app, index) => (
+                    <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
+                      <Link href={`/apps/${index}`} className="block w-full h-full">
+                         <div className="flex flex-col items-center justify-center p-3 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground">
+                            {app.icon}
+                            <span className="mt-2 text-xs font-medium text-center">{app.title}</span>
+                         </div>
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
 

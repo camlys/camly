@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { apps } from '@/components/landing/app-grid';
+import { apps } from '@/lib/apps-config';
 import type { Metadata } from 'next';
 import AppViewerClient from './app-viewer-client';
 
@@ -45,5 +45,5 @@ export default function AppViewerPage({ params }: { params: { id: string } }) {
 
   const app = apps[appId];
 
-  return <AppViewerClient app={app} apps={apps} />;
+  return <AppViewerClient app={app} />;
 }

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { apps } from '@/components/landing/app-grid';
+import { apps } from '@/lib/apps-config';
 import { posts } from '@/app/blog/page';
 
 const URL = 'https://camly.site';

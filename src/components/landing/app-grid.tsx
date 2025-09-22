@@ -5,41 +5,8 @@ import {
   CardDescription,
 } from '@/components/ui/card';
 import { AnimateOnScroll } from '@/components/landing/animate-on-scroll';
-import { QrCode, Calculator, Image, Crop } from 'lucide-react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
-
-export const apps = [
-  {
-    icon: <QrCode className="h-6 w-6 text-primary" />,
-    title: 'QR & Barcode Generator',
-    description:
-      'Generate and customize QR codes and barcodes for your business needs.',
-    href: 'https://qrick.vercel.app/',
-    delay: 0,
-  },
-  {
-    icon: <Calculator className="h-6 w-6 text-primary" />,
-    title: 'Calculator App',
-    description: 'A simple and elegant calculator for your daily calculations.',
-    href: 'https://calput.vercel.app/',
-    delay: 150,
-  },
-  {
-    icon: <Image className="h-6 w-6 text-primary" />,
-    title: 'Favicon Generator',
-    description: 'Create your perfect favicon from an image, text, or emoji.',
-    href: 'https://favicon-generate.vercel.app/',
-    delay: 300,
-  },
-  {
-    icon: <Crop className="h-6 w-6 text-primary" />,
-    title: 'Image Resizer',
-    description: 'Quickly resize and optimize your images for any use case.',
-    href: 'https://img-resizers.vercel.app/',
-    delay: 450,
-  },
-];
+import { apps } from '@/lib/apps-config';
 
 export function AppGrid() {
   return (
