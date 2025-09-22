@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { apps } from '@/components/landing/app-grid';
+import { posts } from '@/app/blog/page';
 
 const URL = 'https://camly.site';
 
@@ -13,11 +14,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const blogRoutes = posts.map((post) => ({
+    url: `${URL}${post.href}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
   const staticRoutes = [
     {
       url: `${URL}/seo`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
       priority: 0.7,
     }
   ];
@@ -30,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...appRoutes,
+    ...blogRoutes,
     ...staticRoutes,
   ];
 }

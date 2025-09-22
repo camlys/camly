@@ -8,6 +8,7 @@ import { SeoHighlight } from '@/components/landing/seo-highlight';
 import { Faq } from '@/components/landing/faq';
 import { ContactForm } from '@/components/landing/contact-form';
 import { Footer } from '@/components/landing/footer';
+import { BlogHighlight } from '@/components/landing/blog-highlight';
 
 export default function Home() {
   return (
@@ -24,19 +25,22 @@ export default function Home() {
         <div className="bg-secondary">
           <Testimonials />
         </div>
-        <div className="bg-background">
-          <Cta />
+         <div className="bg-background">
+          <BlogHighlight />
         </div>
         <div className="bg-muted/50">
-          <SeoHighlight />
+          <Cta />
         </div>
         <div className="bg-background">
-          <Faq />
+          <SeoHighlight />
         </div>
         <div className="bg-secondary">
+          <Faq />
+        </div>
+        <div className="bg-muted/50">
           <ContactForm />
         </div>
-      </main>
+      </main>      
       <Footer />
     </div>
   );

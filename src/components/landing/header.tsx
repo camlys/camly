@@ -24,6 +24,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = [
     { href: '#features', label: 'Features' },
+    { href: '/blog', label: 'Blog' },
     { href: '#testimonials', label: 'Testimonials' },
     { href: '/seo', label: 'SEO' },
     { href: '#contact', label: 'Contact' },
