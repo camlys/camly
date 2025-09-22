@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Home } from 'lucide-react';
+import { Home, LayoutGrid } from 'lucide-react';
 
 export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +25,7 @@ export default function AppViewerClient({ app, apps }: { app: any, apps: any[] }
                 className="animated-icon-background focus-visible:ring-0 focus-visible:ring-offset-0 px-6 py-4"
                 onMouseEnter={() => setIsMenuOpen(true)}
               >
+                <LayoutGrid className="h-6 w-6" />
                 <span className="sr-only">All Apps</span>
               </Button>
             </DropdownMenuTrigger>

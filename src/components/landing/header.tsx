@@ -13,7 +13,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Menu, Grid3x3 } from 'lucide-react';
+import { Menu, LayoutGrid } from 'lucide-react';
 import { apps } from './app-grid';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
@@ -59,7 +59,7 @@ export function Header() {
                     className="focus-visible:ring-0 focus-visible:ring-offset-0 z-10 hover:bg-transparent"
                     onMouseEnter={() => setIsMenuOpen(true)}
                   >
-                    <Grid3x3 className="h-5 w-5" />
+                    <LayoutGrid className="h-5 w-5" />
                     <span className="sr-only">All Apps</span>
                   </Button>
                 </DropdownMenuTrigger>
