@@ -30,7 +30,7 @@ export function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="font-bold font-headline">Camly</span>
         </Link>
-        <div className="flex flex-1 items-center justify-end space-x-2 md:justify-between">
+        <div className="flex flex-1 items-center justify-end md:justify-between">
            <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
             {navLinks.map(link => (
               <Link
@@ -43,7 +43,7 @@ export function Header() {
             ))}
           </nav>
           
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2">
             <ThemeToggle />
 
             <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -51,7 +51,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="ml-2 focus-visible:ring-0 focus-visible:ring-offset-0 border"
+                  className="focus-visible:ring-0 focus-visible:ring-offset-0 border"
                 >
                   <LayoutGrid className="h-5 w-5" />
                   <span className="sr-only">App Hub</span>
