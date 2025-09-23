@@ -30,56 +30,54 @@ export function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="font-bold font-headline">Camly</span>
         </Link>
-        <div className="flex flex-1 items-center justify-end">
-           <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
-            {navLinks.map(link => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          
-          <div className="flex items-center space-x-2">
-            <ThemeToggle />
+        <nav className="hidden items-center space-x-6 text-sm font-medium md:flex md:flex-1">
+          {navLinks.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-foreground/60 transition-colors hover:text-foreground/80"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+        
+        <div className="flex flex-1 items-center justify-end space-x-2">
+          <ThemeToggle />
 
-            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="focus-visible:ring-0 focus-visible:ring-offset-0 border"
-                >
-                  <LayoutGrid className="h-5 w-5" />
-                  <span className="sr-only">App Hub</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="end"
-                className="w-80 bg-background/80 p-4 backdrop-blur-sm"
+          <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="focus-visible:ring-0 focus-visible:ring-offset-0 border"
               >
-                <div className="mb-4">
-                  <h3 className="text-lg font-medium font-headline">App Hub</h3>
-                  <p className="text-sm text-muted-foreground">Quick access to all tools.</p>
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {apps.map((app, index) => (
-                    <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
-                      <Link href={`/apps/${index}`} className="block w-full h-full">
-                         <div className="flex flex-col items-center justify-center p-3 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground">
-                            {app.icon}
-                            <span className="mt-2 text-xs font-medium text-center">{app.title}</span>
-                         </div>
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
+                <LayoutGrid className="h-5 w-5" />
+                <span className="sr-only">App Hub</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              align="end"
+              className="w-80 bg-background/80 p-4 backdrop-blur-sm"
+            >
+              <div className="mb-4">
+                <h3 className="text-lg font-medium font-headline">App Hub</h3>
+                <p className="text-sm text-muted-foreground">Quick access to all tools.</p>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {apps.map((app, index) => (
+                  <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
+                    <Link href={`/apps/${index}`} className="block w-full h-full">
+                       <div className="flex flex-col items-center justify-center p-3 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground">
+                          {app.icon}
+                          <span className="mt-2 text-xs font-medium text-center">{app.title}</span>
+                       </div>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </div>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </header>
