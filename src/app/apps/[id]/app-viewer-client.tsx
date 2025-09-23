@@ -82,7 +82,7 @@ export default function AppViewerClient({ app }: { app: any }) {
       document.removeEventListener('mouseup', handleDragEnd);
       document.removeEventListener('touchmove', handleTouchMove);
       document.removeEventListener('touchend', handleDragEnd);
-      document.body.style.cursor = '';
+       document.body.style.cursor = '';
     }
 
     return () => {
@@ -99,7 +99,7 @@ export default function AppViewerClient({ app }: { app: any }) {
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
         <div 
           ref={dragRef}
-          className="absolute z-10 flex items-center p-1 rounded-md"
+          className="absolute z-10 flex items-center p-1 rounded-md border"
           style={{
             left: `${position.x}px`,
             top: `${position.y}px`,
