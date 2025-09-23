@@ -99,7 +99,7 @@ export default function AppViewerClient({ app }: { app: any }) {
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
         <div 
           ref={dragRef}
-          className="absolute z-10 flex items-center p-1 rounded-md border backdrop-blur-sm"
+          className="absolute z-10 flex items-center p-1 rounded-md"
           style={{
             left: `${position.x}px`,
             top: `${position.y}px`,
