@@ -23,8 +23,8 @@ export default function AppViewerClient({ app }: { app: any }) {
   const dragRef = useRef<HTMLDivElement>(null);
   const dragStartPos = useRef({ x: 0, y: 0 });
 
-  const handleDragStart = (clientX: number, clientY: number, target: EventTarget | null) => {
-    if (!dragRef.current || !(target instanceof Element) || !target.closest('[data-drag-handle]')) return;
+  const handleDragStart = (clientX: number, clientY: number) => {
+    if (!dragRef.current) return;
     
     setIsDragging(true);
     const rect = dragRef.current.getBoundingClientRect();
@@ -38,11 +38,11 @@ export default function AppViewerClient({ app }: { app: any }) {
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     // Only allow dragging with the primary mouse button
     if (e.button !== 0) return;
-    handleDragStart(e.clientX, e.clientY, e.target);
+    handleDragStart(e.clientX, e.clientY);
   };
   
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
-    handleDragStart(e.touches[0].clientX, e.touches[0].clientY, e.target);
+    handleDragStart(e.touches[0].clientX, e.touches[0].clientY);
   };
 
   const handleDragMove = (clientX: number, clientY: number) => {
@@ -99,30 +99,32 @@ export default function AppViewerClient({ app }: { app: any }) {
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
         <div 
           ref={dragRef}
-          className="absolute z-10"
+          className="absolute z-10 flex items-center p-1 rounded-md border bg-background/80 backdrop-blur-sm"
           style={{
             left: `${position.x}px`,
             top: `${position.y}px`,
           }}
         >
+           <div 
+              className={cn("p-2 cursor-grab", isDragging && "cursor-grabbing")}
+              onMouseDown={handleMouseDown}
+              onTouchStart={handleTouchStart}
+            >
+              <Move className="h-4 w-4 text-muted-foreground" />
+            </div>
            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DropdownMenuTrigger asChild>
                <Button
                 variant="ghost"
-                className="relative px-4 py-4 focus-visible:ring-0 focus-visible:ring-offset-0 border"
-                onMouseDown={handleMouseDown}
-                onTouchStart={handleTouchStart}
+                className="p-2 h-auto focus-visible:ring-0 focus-visible:ring-offset-0"
               >
-                <div data-drag-handle className={cn("absolute top-0 right-0 p-1 cursor-grab", isDragging && "cursor-grabbing")}>
-                  <Move className="h-3 w-3 text-muted-foreground" />
-                </div>
                 <LayoutGrid className="h-6 w-6" />
                 <span className="sr-only">App Hub</span>
               </Button>
             </DropdownMenuTrigger>
              <DropdownMenuContent 
               align="start" 
-              className="w-80 bg-background/80 p-4 backdrop-blur-sm"
+              className="w-80 bg-background/80 p-4 backdrop-blur-sm mt-2"
              >
                 <div className="mb-2">
                   <DropdownMenuItem asChild>
