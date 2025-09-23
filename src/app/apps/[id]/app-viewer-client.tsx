@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { Home, LayoutGrid } from 'lucide-react';
+import { Home, LayoutGrid, Move } from 'lucide-react';
 import { apps } from '@/lib/apps-config';
 import { cn } from '@/lib/utils';
 
@@ -23,24 +23,26 @@ export default function AppViewerClient({ app }: { app: any }) {
   const dragRef = useRef<HTMLDivElement>(null);
   const dragStartPos = useRef({ x: 0, y: 0 });
 
-  const handleDragStart = (clientX: number, clientY: number) => {
-    if (!dragRef.current) return;
+  const handleDragStart = (clientX: number, clientY: number, target: EventTarget | null) => {
+    if (!dragRef.current || !(target instanceof Element) || !target.closest('[data-drag-handle]')) return;
+    
     setIsDragging(true);
     const rect = dragRef.current.getBoundingClientRect();
+    
     dragStartPos.current = {
-      x: clientX - rect.left + position.x,
-      y: clientY - rect.top + position.y,
+      x: clientX - rect.left,
+      y: clientY - rect.top,
     };
   };
   
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     // Only allow dragging with the primary mouse button
     if (e.button !== 0) return;
-    handleDragStart(e.clientX, e.clientY);
+    handleDragStart(e.clientX, e.clientY, e.target);
   };
   
   const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
-    handleDragStart(e.touches[0].clientX, e.touches[0].clientY);
+    handleDragStart(e.touches[0].clientX, e.touches[0].clientY, e.target);
   };
 
   const handleDragMove = (clientX: number, clientY: number) => {
@@ -50,8 +52,8 @@ export default function AppViewerClient({ app }: { app: any }) {
 
     // Clamp position to be within the viewport
     const { offsetWidth, offsetHeight } = dragRef.current;
-    newX = Math.max(0, Math.min(newX, window.innerWidth - offsetWidth));
-    newY = Math.max(0, Math.min(newY, window.innerHeight - offsetHeight));
+    newX = Math.max(16, Math.min(newX, window.innerWidth - offsetWidth - 16));
+    newY = Math.max(16, Math.min(newY, window.innerHeight - offsetHeight - 16));
     
     setPosition({ x: newX, y: newY });
   };
@@ -74,11 +76,13 @@ export default function AppViewerClient({ app }: { app: any }) {
       document.addEventListener('mouseup', handleDragEnd);
       document.addEventListener('touchmove', handleTouchMove);
       document.addEventListener('touchend', handleDragEnd);
+      document.body.style.cursor = 'grabbing';
     } else {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleDragEnd);
       document.removeEventListener('touchmove', handleTouchMove);
       document.removeEventListener('touchend', handleDragEnd);
+      document.body.style.cursor = '';
     }
 
     return () => {
@@ -86,6 +90,7 @@ export default function AppViewerClient({ app }: { app: any }) {
       document.removeEventListener('mouseup', handleDragEnd);
       document.removeEventListener('touchmove', handleTouchMove);
       document.removeEventListener('touchend', handleDragEnd);
+       document.body.style.cursor = '';
     };
   }, [isDragging]);
 
@@ -94,23 +99,23 @@ export default function AppViewerClient({ app }: { app: any }) {
     <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
         <div 
           ref={dragRef}
-          className={cn(
-            "absolute z-10 cursor-grab",
-            isDragging && "cursor-grabbing"
-          )}
+          className="absolute z-10"
           style={{
             left: `${position.x}px`,
             top: `${position.y}px`,
           }}
-          onMouseDown={handleMouseDown}
-          onTouchStart={handleTouchStart}
         >
            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DropdownMenuTrigger asChild>
                <Button
                 variant="ghost"
-                className="px-4 py-4 focus-visible:ring-0 focus-visible:ring-offset-0 border"
+                className="relative px-4 py-4 focus-visible:ring-0 focus-visible:ring-offset-0 border"
+                onMouseDown={handleMouseDown}
+                onTouchStart={handleTouchStart}
               >
+                <div data-drag-handle className={cn("absolute top-0 right-0 p-1 cursor-grab", isDragging && "cursor-grabbing")}>
+                  <Move className="h-3 w-3 text-muted-foreground" />
+                </div>
                 <LayoutGrid className="h-6 w-6" />
                 <span className="sr-only">App Hub</span>
               </Button>
