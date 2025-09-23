@@ -30,7 +30,7 @@ export function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="font-bold font-headline">Camly</span>
         </Link>
-        <div className="flex flex-1 items-center justify-end md:justify-between">
+        <div className="flex flex-1 items-center justify-end">
            <nav className="hidden flex-1 items-center space-x-6 text-sm font-medium md:flex">
             {navLinks.map(link => (
               <Link
