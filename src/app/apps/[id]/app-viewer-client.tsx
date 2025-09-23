@@ -1,6 +1,8 @@
+
 "use client"
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import type { MouseEvent, TouchEvent } from 'react';
 import Link from 'next/link';
 import {
   DropdownMenu,
@@ -12,13 +14,97 @@ import {
 import { Button } from '@/components/ui/button';
 import { Home, LayoutGrid } from 'lucide-react';
 import { apps } from '@/lib/apps-config';
+import { cn } from '@/lib/utils';
 
 export default function AppViewerClient({ app }: { app: any }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [position, setPosition] = useState({ x: 16, y: 16 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragRef = useRef<HTMLDivElement>(null);
+  const dragStartPos = useRef({ x: 0, y: 0 });
+
+  const handleDragStart = (clientX: number, clientY: number) => {
+    if (!dragRef.current) return;
+    setIsDragging(true);
+    const rect = dragRef.current.getBoundingClientRect();
+    dragStartPos.current = {
+      x: clientX - rect.left + position.x,
+      y: clientY - rect.top + position.y,
+    };
+  };
+  
+  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
+    // Only allow dragging with the primary mouse button
+    if (e.button !== 0) return;
+    handleDragStart(e.clientX, e.clientY);
+  };
+  
+  const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+    handleDragStart(e.touches[0].clientX, e.touches[0].clientY);
+  };
+
+  const handleDragMove = (clientX: number, clientY: number) => {
+    if (!isDragging || !dragRef.current) return;
+    let newX = clientX - dragStartPos.current.x;
+    let newY = clientY - dragStartPos.current.y;
+
+    // Clamp position to be within the viewport
+    const { offsetWidth, offsetHeight } = dragRef.current;
+    newX = Math.max(0, Math.min(newX, window.innerWidth - offsetWidth));
+    newY = Math.max(0, Math.min(newY, window.innerHeight - offsetHeight));
+    
+    setPosition({ x: newX, y: newY });
+  };
+  
+  const handleMouseMove = (e: globalThis.MouseEvent) => {
+    handleDragMove(e.clientX, e.clientY);
+  };
+  
+  const handleTouchMove = (e: globalThis.TouchEvent) => {
+    handleDragMove(e.touches[0].clientX, e.touches[0].clientY);
+  };
+
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleDragEnd);
+      document.addEventListener('touchmove', handleTouchMove);
+      document.addEventListener('touchend', handleDragEnd);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleDragEnd);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleDragEnd);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleDragEnd);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleDragEnd);
+    };
+  }, [isDragging]);
+
 
   return (
-    <div className="flex flex-col h-screen bg-background text-foreground">
-        <div className="absolute top-4 left-4 z-10">
+    <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
+        <div 
+          ref={dragRef}
+          className={cn(
+            "absolute z-10 cursor-grab",
+            isDragging && "cursor-grabbing"
+          )}
+          style={{
+            left: `${position.x}px`,
+            top: `${position.y}px`,
+          }}
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
+        >
            <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DropdownMenuTrigger asChild>
                <Button
