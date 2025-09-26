@@ -10,14 +10,14 @@ const URL_BASE = 'https://camly.site';
 export const metadata: Metadata = {
   metadataBase: new URL(URL_BASE),
   title: {
-    default: 'Camly - Streamline Your Workflow, Amplify Your Results.',
+    default: 'Camly - Free Online Tools to Streamline Your Workflow',
     template: `%s | Camly`,
   },
-  description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth. Discover QR generators, calculators, image resizers, and favicon generators.',
-  keywords: ['productivity suite', 'workflow optimization', 'business tools', 'online apps', 'QR code generator', 'image resizer', 'favicon generator', 'online calculator', 'small business tools', 'web development utilities'],
+  description: 'A suite of powerful free online tools including a PDF Editor, QR Generator, Image Resizer, and more. Boost productivity and streamline your workflow with Camly.',
+  keywords: ['PDF editor', 'edit PDF', 'QR code generator', 'image resizer', 'favicon generator', 'online calculator', 'free tools', 'productivity suite', 'workflow optimization', 'business tools', 'online apps', 'PDFpro', 'small business tools', 'web development utilities'],
   openGraph: {
-    title: 'Camly - Streamline Your Workflow, Amplify Your Results.',
-    description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth.',
+    title: 'Camly - Free Online Tools to Streamline Your Workflow',
+    description: 'A suite of powerful applications including a PDF Editor to streamline your workflow, enhance productivity, and drive growth.',
     url: URL_BASE,
     siteName: 'Camly',
     images: [
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Camly - Streamline Your Workflow, Amplify Your Results.',
-    description: 'A suite of powerful applications to streamline your workflow, enhance productivity, and drive growth.',
+    title: 'Camly - Free Online Tools to Streamline Your Workflow',
+    description: 'A suite of powerful applications including a PDF Editor to streamline your workflow, enhance productivity, and drive growth.',
     images: [`${URL_BASE}/og-image.png`],
   },
   icons: {

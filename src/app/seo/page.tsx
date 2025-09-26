@@ -10,17 +10,17 @@ import type { Metadata } from 'next';
 import { apps } from '@/lib/apps-config';
 
 export const metadata: Metadata = {
-  title: 'SEO Services & Strategy',
-  description: 'Elevate your online presence with Camly\'s expert SEO services. We offer comprehensive strategies including keyword research, on-page optimization, link building, and technical SEO to boost your rankings and drive organic traffic.',
-  keywords: ['SEO services', 'search engine optimization', 'keyword research', 'on-page SEO', 'technical SEO', 'link building', 'organic traffic', 'SEO audit', 'local SEO', 'ecommerce SEO', 'content marketing'],
+  title: 'Advanced SEO Services & Free SEO Tools',
+  description: 'Elevate your online presence with expert SEO services and free tools like our PDF Editor. We offer comprehensive strategies including keyword research, on-page optimization, link building, and technical SEO to boost your rankings and drive organic traffic.',
+  keywords: ['SEO services', 'search engine optimization', 'keyword research', 'on-page SEO', 'technical SEO', 'link building', 'organic traffic', 'SEO audit', 'local SEO', 'ecommerce SEO', 'content marketing', 'PDF editor'],
   openGraph: {
-    title: 'Expert SEO Services to Boost Your Ranking | Camly',
-    description: 'Unlock your website\'s potential with our data-driven SEO strategies. From keyword analysis to content optimization, we cover all aspects of search engine optimization.',
+    title: 'Expert SEO Services & Free Tools to Boost Your Ranking | Camly',
+    description: 'Unlock your website\'s potential with our data-driven SEO strategies and free tools like our PDF editor. From keyword analysis to content optimization, we cover all aspects of SEO.',
     images: ['/og-image-seo.png'],
   },
   twitter: {
-    title: 'Expert SEO Services to Boost Your Ranking | Camly',
-    description: 'Unlock your website\'s potential with our data-driven SEO strategies.',
+    title: 'Expert SEO Services & Free Tools to Boost Your Ranking | Camly',
+    description: 'Unlock your website\'s potential with our data-driven SEO strategies and free tools.',
     images: ['/og-image-seo.png'],
   },
 };
@@ -165,7 +165,7 @@ export default function SEOPage() {
                     <div className="container">
                         <div className="mb-12 text-center">
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl font-headline">
-                            Integrated Tools to Boost Your Online Presence
+                                Integrated Tools to Boost Your Online Presence
                             </h2>
                             <p className="mx-auto mt-4 max-w-[700px] text-foreground/80 md:text-xl">
                                 Effective SEO is supported by great tools. Our application suite is designed to enhance your digital footprint.
@@ -281,6 +281,7 @@ export default function SEOPage() {
 }
 
     
+
 
 
 

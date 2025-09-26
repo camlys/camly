@@ -33,7 +33,7 @@ export const apps = [
   {
     icon: <FileEdit className="h-10 w-10 text-primary" />,
     title: 'PDFpro',
-    description: 'Edit your PDF files with ease. A simple and powerful tool for all your PDF editing needs.',
+    description: 'Edit, merge, and organize your PDF files with our free and easy-to-use online PDF editor. No installation required. A powerful tool for all your PDF editing needs.',
     href: 'https://pdfpro-app.vercel.app/',
     delay: 600,
   },
