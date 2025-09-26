@@ -58,17 +58,17 @@ export function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="end"
-              className="w-80 bg-background/80 p-4 backdrop-blur-sm"
+              className="w-96 bg-background/80 p-4 backdrop-blur-sm"
             >
               <div className="mb-4">
                 <h3 className="text-lg font-medium font-headline">App Hub</h3>
                 <p className="text-sm text-muted-foreground">Quick access to all tools.</p>
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-4">
                 {apps.map((app, index) => (
                   <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
                     <Link href={`/apps/${index}`} className="block w-full h-full">
-                       <div className="flex flex-col items-center justify-start text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28">
+                       <div className="flex flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28">
                           {app.icon}
                           <span className="mt-2 text-xs font-medium">{app.title}</span>
                        </div>

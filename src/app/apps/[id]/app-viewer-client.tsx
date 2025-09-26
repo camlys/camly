@@ -124,7 +124,7 @@ export default function AppViewerClient({ app }: { app: any }) {
             </DropdownMenuTrigger>
              <DropdownMenuContent 
               align="start" 
-              className="w-80 bg-background/80 p-4 backdrop-blur-sm mt-2"
+              className="w-96 bg-background/80 p-4 backdrop-blur-sm mt-2"
              >
                 <div className="mb-2">
                   <DropdownMenuItem asChild>
@@ -139,11 +139,11 @@ export default function AppViewerClient({ app }: { app: any }) {
                   <h3 className="text-lg font-medium font-headline px-2">App Hub</h3>
                   <p className="text-sm text-muted-foreground px-2">Quick access to all tools.</p>
                 </div>
-                <div className="grid grid-cols-2 gap-2 mt-2">
+                <div className="grid grid-cols-3 gap-4 mt-2">
                   {apps.map((appItem, index) => (
                     <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
                       <Link href={`/apps/${index}`} className="block w-full h-full">
-                         <div className="flex flex-col items-center justify-start text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28">
+                         <div className="flex flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28">
                             {appItem.icon}
                             <span className="mt-2 text-xs font-medium">{appItem.title}</span>
                          </div>
