@@ -28,7 +28,7 @@ export function AppGrid() {
           >
             <Link href={`/apps/${index}`} className="h-full block">
               <div className="h-full animated-border-card rounded-lg">
-                <Card className="h-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <Card className="h-full transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl lg:h-52 flex flex-col justify-center">
                   <CardHeader>
                     <AnimateOnScroll
                       className="data-[state=closed]:opacity-0 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95"
