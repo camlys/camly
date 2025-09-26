@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Home, LayoutGrid, Move } from 'lucide-react';
 import { apps } from '@/lib/apps-config';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export default function AppViewerClient({ app }: { app: any }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -135,9 +136,12 @@ export default function AppViewerClient({ app }: { app: any }) {
                   </DropdownMenuItem>
                 </div>
                 <DropdownMenuSeparator />
-                 <div className="my-2">
-                  <h3 className="text-lg font-medium font-headline px-2">App Hub</h3>
-                  <p className="text-sm text-muted-foreground px-2">Quick access to all tools.</p>
+                 <div className="my-2 flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-medium font-headline px-2">App Hub</h3>
+                    <p className="text-sm text-muted-foreground px-2">Quick access to all tools.</p>
+                  </div>
+                  <ThemeToggle />
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-2">
                   {apps.map((appItem, index) => (

@@ -43,8 +43,6 @@ export function Header() {
         </nav>
         
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <ThemeToggle />
-
           <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
             <DropdownMenuTrigger asChild>
               <Button
@@ -60,9 +58,12 @@ export function Header() {
               align="end"
               className="w-96 bg-background/80 p-4 backdrop-blur-sm"
             >
-              <div className="mb-4">
-                <h3 className="text-lg font-medium font-headline">App Hub</h3>
-                <p className="text-sm text-muted-foreground">Quick access to all tools.</p>
+               <div className="mb-4 flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-medium font-headline">App Hub</h3>
+                  <p className="text-sm text-muted-foreground">Quick access to all tools.</p>
+                </div>
+                <ThemeToggle />
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {apps.map((app, index) => (
