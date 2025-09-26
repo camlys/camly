@@ -18,6 +18,14 @@ export const metadata: Metadata = {
 
 export const posts = [
     {
+        title: "5 Free Tools to Supercharge Your Productivity & Brand",
+        description: "Discover five essential free tools that will streamline your workflow, enhance your brand, and boost productivity.",
+        href: "/blog/5-free-tools-to-supercharge-your-brand",
+        category: "Productivity",
+        image: "https://picsum.photos/seed/blog4/600/400",
+        aiHint: "productivity tools desk",
+    },
+    {
         title: "The Ultimate Guide to QR Codes for Small Businesses",
         description: "Learn how QR codes can revolutionize your marketing, operations, and customer engagement.",
         href: "/blog/qr-code-guide",
