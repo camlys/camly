@@ -65,12 +65,12 @@ export function Header() {
                 </div>
                 <ThemeToggle />
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-4 gap-2">
                 {apps.map((app, index) => (
                   <Link
                     key={index}
                     href={`/apps/${index}`}
-                    className="flex flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28 border shadow-sm"
+                    className="flex flex-col items-center justify-center text-center p-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-24 border shadow-sm"
                   >
                     {app.icon}
                     <span className="mt-2 text-xs font-medium">{app.title}</span>
