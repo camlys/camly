@@ -171,7 +171,7 @@ export default function SEOPage() {
                                 Effective SEO is supported by great tools. Our application suite is designed to enhance your digital footprint.
                             </p>
                         </div>
-                        <div className="mx-auto grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                        <div className="mx-auto grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-5">
                             {apps.map((app, index) => (
                             <AnimateOnScroll
                                 key={index}
@@ -281,5 +281,6 @@ export default function SEOPage() {
 }
 
     
+
 
 

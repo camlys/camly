@@ -1,4 +1,4 @@
-import { QrCode, Calculator, ImageIcon, Scissors } from 'lucide-react';
+import { QrCode, Calculator, ImageIcon, Scissors, FileEdit } from 'lucide-react';
 
 export const apps = [
   {
@@ -29,5 +29,12 @@ export const apps = [
     description: 'Quickly resize and optimize your images for web, social media, or any other use case without losing quality. A must-have for web developers.',
     href: 'https://img-resizers.vercel.app/',
     delay: 450,
+  },
+  {
+    icon: <FileEdit className="h-10 w-10 text-primary" />,
+    title: 'PDFpro',
+    description: 'Edit your PDF files with ease. A simple and powerful tool for all your PDF editing needs.',
+    href: 'https://pdfpro-app.vercel.app/',
+    delay: 600,
   },
 ];

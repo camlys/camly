@@ -19,7 +19,7 @@ export function AppGrid() {
           Discover powerful tools to enhance your workflow and productivity.
         </p>
       </div>
-      <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-5">
         {apps.map((app, index) => (
           <AnimateOnScroll
             key={index}
