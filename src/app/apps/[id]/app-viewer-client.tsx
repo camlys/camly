@@ -125,7 +125,7 @@ export default function AppViewerClient({ app }: { app: any }) {
             </DropdownMenuTrigger>
              <DropdownMenuContent 
               align="start" 
-              className="w-96 bg-background/80 p-4 backdrop-blur-sm mt-2"
+              className="w-[calc(100vw-2rem)] sm:w-96 bg-background/80 p-4 backdrop-blur-sm mt-2"
              >
                 <div className="mb-2">
                   <DropdownMenuItem asChild>

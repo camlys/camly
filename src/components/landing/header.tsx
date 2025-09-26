@@ -56,7 +56,7 @@ export function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="end"
-              className="w-96 bg-background/80 p-4 backdrop-blur-sm"
+              className="w-[calc(100vw-2rem)] sm:w-96 bg-background/80 p-4 backdrop-blur-sm"
             >
                <div className="mb-4 flex items-center justify-between">
                 <div>
