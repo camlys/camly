@@ -8,11 +8,11 @@ import type { Metadata } from 'next';
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Explore our latest articles and insights on productivity, SEO, web development, and business tools to help you streamline your workflow and amplify your results.',
+  title: 'Blog | Productivity, SEO, and Business Tools Insights',
+  description: 'Explore our latest articles and insights on productivity, SEO, web development, and business tools like our PDF editor and QR code generator to help you streamline your workflow and amplify your results.',
   openGraph: {
     title: 'Blog | Camly',
-    description: 'Insights and articles from the Camly team.',
+    description: 'Insights and articles on productivity tools from the Camly team.',
   },
 };
 

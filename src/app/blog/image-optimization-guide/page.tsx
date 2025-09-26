@@ -9,11 +9,11 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Optimizing Images for the Web: A Beginner's Guide",
-    description: "Master the art of image resizing and compression to dramatically improve your website's loading speed, SEO, and user experience.",
-    keywords: ["image optimization", "web performance", "image compression", "image resizing", "page speed"],
+    description: "Master the art of image resizing and compression to dramatically improve your website's loading speed and SEO. Use our free Image Resizer tool to get started.",
+    keywords: ["image optimization", "web performance", "image compression", "image resizing", "page speed", "image resizer", "free tools"],
     openGraph: {
         title: "Optimizing Images for the Web: A Beginner's Guide | Camly",
-        description: "Slow website? Your images might be the culprit. Learn how to properly optimize them for the web.",
+        description: "Slow website? Your images might be the culprit. Learn how to properly optimize them for the web with our guide and free tool.",
         images: ['/og-image-img-guide.png'],
     },
 };

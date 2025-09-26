@@ -8,12 +8,12 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Why Every Website Needs a Great Favicon",
-    description: "A deep dive into the importance of favicons for brand identity, user experience, and even SEO. Don't underestimate this tiny icon.",
-    keywords: ["favicon", "website branding", "user experience", "SEO", "web design"],
+    title: "Why Every Website Needs a Great Favicon (and How to Make One)",
+    description: "A deep dive into the importance of favicons for brand identity, user experience, and even SEO. Learn why you shouldn't underestimate this tiny icon and how to create one with our free generator.",
+    keywords: ["favicon", "website branding", "user experience", "SEO", "web design", "favicon generator", "free tools", "brand identity"],
     openGraph: {
         title: "Why Every Website Needs a Great Favicon | Camly",
-        description: "Discover how a simple favicon can significantly impact your website's professionalism and brand recognition.",
+        description: "Discover how a simple favicon can significantly impact your website's professionalism and brand recognition. Create yours for free.",
         images: ['/og-image-favicon-guide.png'],
     },
 };

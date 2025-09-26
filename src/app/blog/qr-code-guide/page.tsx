@@ -9,10 +9,10 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "The Ultimate Guide to QR Codes for Small Businesses",
-    description: "Learn how QR codes can revolutionize your marketing, operations, and customer engagement. A comprehensive guide for small businesses.",
-    keywords: ["QR codes", "small business marketing", "customer engagement", "digital marketing", "contactless solutions"],
+    description: "Learn how QR codes can revolutionize your marketing, operations, and customer engagement. A comprehensive guide for small businesses, with a link to our free QR code generator.",
+    keywords: ["QR codes", "small business marketing", "customer engagement", "digital marketing", "contactless solutions", "QR code generator", "free tools"],
     openGraph: {
-        title: "The Ultimate Guide to QR Codes for Small Businesses",
+        title: "The Ultimate Guide to QR Codes for Small Businesses | Camly",
         description: "Unlock the power of QR codes for your small business. From marketing campaigns to simplifying operations, this guide covers it all.",
         images: ['/og-image-qr-guide.png'],
     },
