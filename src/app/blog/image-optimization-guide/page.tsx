@@ -68,7 +68,7 @@ export default function ImageOptimizationPage() {
                         <p>
                             Compression reduces the file size of an image without significantly degrading its quality.
                             <strong>Lossy compression</strong> removes some data, resulting in a much smaller file with a minor quality reduction. It's great for photographs (JPEGs).
-                            <strong>Lossless compression</strong> reduces file size without any quality loss. It's ideal for graphics with sharp lines and text (PNGs).
+                            <strong>Lossless compression</strong> reduces file size without any quality loss. It's ideal for graphics with sharp lines and text (PNGs). For more options, you can explore tools like <Link href="https://www.imgresizer.xyz/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">imgresizer.xyz</Link>.
                         </p>
 
                         <div className="not-prose my-10 text-center">

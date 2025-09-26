@@ -26,6 +26,14 @@ export const posts = [
         aiHint: "productivity tools desk",
     },
     {
+        title: "A Strategic Guide to Brand Building with Free Tools",
+        description: "Learn how to build a strong brand identity from the ground up using free, powerful tools for logos, marketing, and more.",
+        href: "/blog/a-guide-to-brand-building-with-free-tools",
+        category: "Branding",
+        image: "https://picsum.photos/seed/blog5/600/400",
+        aiHint: "brand identity moodboard",
+    },
+    {
         title: "The Ultimate Guide to QR Codes for Small Businesses",
         description: "Learn how QR codes can revolutionize your marketing, operations, and customer engagement.",
         href: "/blog/qr-code-guide",
