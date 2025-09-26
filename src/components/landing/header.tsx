@@ -68,7 +68,7 @@ export function Header() {
                 {apps.map((app, index) => (
                   <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
                     <Link href={`/apps/${index}`} className="block w-full h-full">
-                       <div className="flex flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28">
+                       <div className="flex h-full flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28">
                           {app.icon}
                           <span className="mt-2 text-xs font-medium">{app.title}</span>
                        </div>
