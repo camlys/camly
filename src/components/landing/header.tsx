@@ -66,14 +66,14 @@ export function Header() {
               </div>
               <div className="grid grid-cols-3 gap-4">
                 {apps.map((app, index) => (
-                  <DropdownMenuItem key={index} asChild className="h-auto p-0 focus:bg-transparent focus:text-inherit">
-                    <Link href={`/apps/${index}`} className="block w-full h-full">
-                       <div className="flex h-full flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28 border shadow-sm">
-                          {app.icon}
-                          <span className="mt-2 text-xs font-medium">{app.title}</span>
-                       </div>
-                    </Link>
-                  </DropdownMenuItem>
+                  <Link
+                    key={index}
+                    href={`/apps/${index}`}
+                    className="flex flex-col items-center justify-center text-center p-4 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground min-h-28 border shadow-sm"
+                  >
+                    {app.icon}
+                    <span className="mt-2 text-xs font-medium">{app.title}</span>
+                  </Link>
                 ))}
               </div>
             </DropdownMenuContent>
